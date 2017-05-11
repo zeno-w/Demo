@@ -85,6 +85,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DesktopCapture\DesktopCapture.cpp" />
+    <ClCompile Include="GDI\MoveWindow.cpp" />
     <ClCompile Include="MainWinDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
