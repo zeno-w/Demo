@@ -6,5 +6,16 @@ int wmain(int argc, wchar_t *argv[])
 {
 	printf("Running wmain() from gtest_main.cc/n");
 	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
+
+	RUN_ALL_TESTS();
+
+	BOOL fGotMessage;
+	MSG msg;
+
+	while ((fGotMessage = GetMessage(&msg, (HWND)NULL, 0, 0)) != 0 && fGotMessage != -1)
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+	return msg.wParam;
 }

@@ -13,10 +13,17 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\GDI">
+      <UniqueIdentifier>{3dfa275e-1ad6-4d5d-b670-620d63b44683}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GDI">
+      <UniqueIdentifier>{7f855420-9b2a-418f-af56-27efbeea57d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MainWinDemo.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MainWinDemo.cpp" />
+    <ClCompile Include="GDI\MoveWindow.cpp">
+      <Filter>Source Files\GDI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
