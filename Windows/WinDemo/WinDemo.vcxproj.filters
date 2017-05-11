@@ -13,10 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\DesktopCapture">
+      <UniqueIdentifier>{c22e8379-be18-4b1c-8c6c-3f4dae3c5232}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainWinDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DesktopCapture\DesktopCapture.cpp">
+      <Filter>Source Files\DesktopCapture</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DesktopCapture\DesktopCapture.h">
+      <Filter>Source Files\DesktopCapture</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
