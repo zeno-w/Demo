@@ -22,6 +22,9 @@
     <Filter Include="Source Files\GDI">
       <UniqueIdentifier>{7f855420-9b2a-418f-af56-27efbeea57d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ZZUtilityUT">
+      <UniqueIdentifier>{cfa551c3-fd79-460d-a4f7-e886d05ec8bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainWinDemo.cpp" />
@@ -30,6 +33,9 @@
     </ClCompile>
     <ClCompile Include="DesktopCapture\DesktopCapture.cpp">
       <Filter>Source Files\DesktopCapture</Filter>
+    </ClCompile>
+    <ClCompile Include="ZZUtilityUT\TcpIOCPModel.cpp">
+      <Filter>Source Files\ZZUtilityUT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
