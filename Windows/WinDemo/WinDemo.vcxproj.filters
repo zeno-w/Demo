@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\DesktopCapture">
+      <UniqueIdentifier>{c22e8379-be18-4b1c-8c6c-3f4dae3c5232}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resource Files\GDI">
       <UniqueIdentifier>{3dfa275e-1ad6-4d5d-b670-620d63b44683}</UniqueIdentifier>
     </Filter>
@@ -28,8 +31,16 @@
     <ClCompile Include="GDI\MoveWindow.cpp">
       <Filter>Source Files\GDI</Filter>
     </ClCompile>
+    <ClCompile Include="DesktopCapture\DesktopCapture.cpp">
+      <Filter>Source Files\DesktopCapture</Filter>
+    </ClCompile>
     <ClCompile Include="ZZUtilityUT\TcpIOCPModel.cpp">
       <Filter>Source Files\ZZUtilityUT</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DesktopCapture\DesktopCapture.h">
+      <Filter>Source Files\DesktopCapture</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
