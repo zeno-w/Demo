@@ -96,7 +96,6 @@ void CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
 	pbih = (PBITMAPINFOHEADER)pbi;
 	lpBits = (LPBYTE)GlobalAlloc(GMEM_FIXED, pbih->biSizeImage);
 
-
 	// Retrieve the color table (RGBQUAD array) and the bits  
 	// (array of palette indices) from the DIB.  
 	GetDIBits(hDC, hBMP, 0, (WORD)pbih->biHeight, lpBits, pbi,
