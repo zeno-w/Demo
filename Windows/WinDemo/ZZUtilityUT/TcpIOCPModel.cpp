@@ -4,7 +4,8 @@
 #include <gtest/gtest.h>
 #include <ZZUtility/ConcurrencyModel/IoCompletionPortModel.h>
 #include <ZZUtility/ConcurrencyModel/TcpIOCP/TcpListenerHandler.h>
-#include <ZZUtility/ConcurrencyModel/TcpIOCP/TcpSessionClientHandler.h>
+#include <ZZUtility/ConcurrencyModel/TcpIOCP/TcpClientSessionHandler.h>
+#include <ZZUtility/ConcurrencyModel/TcpIOCP/TcpServerSessionHandler.h>
 
 #pragma comment(lib,"ws2_32.lib")
 class TcpIOCPModelTest : public testing::Test
@@ -23,19 +24,39 @@ protected:
 
 	virtual void TearDown() override
 	{
-		WSACleanup();
 	}
 };
 
+
+class CTcpServerSessionFactory : public CTcpListenerHandler::ITcpServerSessionFactory
+{
+
+
+	virtual CTcpServerSessionHandler * CreateSession() override
+	{
+		return new CTcpServerSessionHandler();
+	}
+
+
+	virtual void NewSessionTrigger(CTcpServerSessionHandler *pTcpServerSession) override
+	{
+	}
+
+};
+
+
 TEST_F(TcpIOCPModelTest, TcpListener)
 {
-	CTcpListenerHandler *pTcpListener = CTcpListenerHandler::CreateAndAttachToIocp(8888);
-	m_pIOCPModel->AttachHandler(pTcpListener);
+	CTcpServerSessionFactory *pFactory = new CTcpServerSessionFactory();
+	CTcpListenerHandler *pTcpListener = new CTcpListenerHandler();
+	pTcpListener->Create(8888, pFactory, m_pIOCPModel);
+	// m_pIOCPModel->DetachHandler(pTcpListener);
 }
 
 
 TEST_F(TcpIOCPModelTest, TcpSessionClient)
 {
-	CTcpSessionClientHandler *pSession = CTcpSessionClientHandler::NewConnection("127.0.0.1", 8888);
-	m_pIOCPModel->AttachHandler(pSession);
+	CTcpClientSessionHandler *pSession = new CTcpClientSessionHandler();
+	BOOL bRes = pSession->Connect("127.0.0.1", 8888, m_pIOCPModel);
+	bRes = bRes;
 }
