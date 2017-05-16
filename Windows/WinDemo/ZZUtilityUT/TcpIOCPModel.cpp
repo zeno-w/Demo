@@ -27,19 +27,25 @@ protected:
 	}
 };
 
-
-class CTcpServerSessionFactory : public CTcpListenerHandler::ITcpServerSessionFactory
+class CTcpServerSession : public CTcpServerSessionHandler
 {
 
-
-	virtual CTcpServerSessionHandler * CreateSession() override
+protected:
+	virtual BOOL DataTransferTrigger(DWORD dwNumOfTransportBytes) override
 	{
-		return new CTcpServerSessionHandler();
+		return TRUE;
 	}
 
+};
 
-	virtual void NewSessionTrigger(CTcpServerSessionHandler *pTcpServerSession) override
+
+class CTcpServerSessionFactory : public CTcpListenerHandler::INewConnectionCallback
+{
+
+	virtual void NewConnectionTrigger(SOCKET sAccepted) override
 	{
+		CTcpServerSession *pSession = new CTcpServerSession();
+		ASSERT_TRUE(pSession->Create(sAccepted, 2096, CIoCompletionPortModel::Instance())) << "CTcpServerSession::Create(..)";
 	}
 
 };
@@ -49,14 +55,15 @@ TEST_F(TcpIOCPModelTest, TcpListener)
 {
 	CTcpServerSessionFactory *pFactory = new CTcpServerSessionFactory();
 	CTcpListenerHandler *pTcpListener = new CTcpListenerHandler();
-	pTcpListener->Create(8888, pFactory, m_pIOCPModel);
-	// m_pIOCPModel->DetachHandler(pTcpListener);
+	pTcpListener->Create(1234, pFactory, m_pIOCPModel);
+	USHORT uPos = pTcpListener->GetListenPort();
+	uPos = uPos;
 }
 
 
 TEST_F(TcpIOCPModelTest, TcpSessionClient)
 {
 	CTcpClientSessionHandler *pSession = new CTcpClientSessionHandler();
-	BOOL bRes = pSession->Connect("127.0.0.1", 8888, m_pIOCPModel);
-	bRes = bRes;
+	ASSERT_TRUE(pSession->Connect("127.0.0.1", 1234, m_pIOCPModel))<<"CTcpClientSessionHandler::Connect";
+	ASSERT_TRUE(pSession->Send("abcdefg", 5));
 }
