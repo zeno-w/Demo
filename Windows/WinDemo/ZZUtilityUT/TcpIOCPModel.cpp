@@ -13,7 +13,7 @@ class TcpIOCPModelTest : public testing::Test
 protected:
 	CIoCompletionPortModel *m_pIOCPModel;
 
-	TcpIOCPModelTest() : m_pIOCPModel(CIoCompletionPortModel::Instance())
+	TcpIOCPModelTest() : m_pIOCPModel(CIoCompletionPortModel::GetInstance())
 	{}
 
 	virtual void SetUp() override
@@ -35,9 +35,7 @@ protected:
 	{
 		return TRUE;
 	}
-
 };
-
 
 class CTcpServerSessionFactory : public CTcpListenerHandler::INewConnectionCallback
 {
@@ -45,7 +43,7 @@ class CTcpServerSessionFactory : public CTcpListenerHandler::INewConnectionCallb
 	virtual void NewConnectionTrigger(SOCKET sAccepted) override
 	{
 		CTcpServerSession *pSession = new CTcpServerSession();
-		ASSERT_TRUE(pSession->Create(sAccepted, 2096, CIoCompletionPortModel::Instance())) << "CTcpServerSession::Create(..)";
+		EXPECT_TRUE(pSession->Create(sAccepted, 2096, CIoCompletionPortModel::GetInstance())) << "CTcpServerSession::Create(..)";
 	}
 
 };
@@ -64,6 +62,6 @@ TEST_F(TcpIOCPModelTest, TcpListener)
 TEST_F(TcpIOCPModelTest, TcpSessionClient)
 {
 	CTcpClientSessionHandler *pSession = new CTcpClientSessionHandler();
-	ASSERT_TRUE(pSession->Connect("127.0.0.1", 1234, m_pIOCPModel))<<"CTcpClientSessionHandler::Connect";
-	ASSERT_TRUE(pSession->Send("abcdefg", 5));
+	EXPECT_TRUE(pSession->Connect("127.0.0.1", 1234, m_pIOCPModel))<<"CTcpClientSessionHandler::Connect";
+	EXPECT_TRUE(pSession->Send("abcdefg", 5));
 }

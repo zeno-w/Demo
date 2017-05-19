@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)</OutDir>
-    <IntDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\Debug_$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)bin\Debug_$(Platform)\obj\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)</OutDir>
-    <IntDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)bin\Release_$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)bin\Release_$(Platform)\obj\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -62,7 +62,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OutputFile>$(SolutionDir)\bin\Debug_$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ProgramDatabaseFile>$(SolutionDir)\bin\Debug_$(Platform)\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
   </ItemDefinitionGroup>
@@ -83,7 +83,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>$(SolutionDir)\bin\Debug_$(Platform)\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <ProgramDatabaseFile>$(SolutionDir)\bin\Debug_$(Platform)\$(TargetName).pdb</ProgramDatabaseFile>
     </Link>
   </ItemDefinitionGroup>
@@ -91,6 +91,7 @@
     <ClCompile Include="DesktopCapture\DesktopCapture.cpp" />
     <ClCompile Include="GDI\MoveWindow.cpp" />
     <ClCompile Include="MainWinDemo.cpp" />
+    <ClCompile Include="ZZUtilityUT\Process.cpp" />
     <ClCompile Include="ZZUtilityUT\TcpIOCPModel.cpp" />
   </ItemGroup>
   <ItemGroup>
