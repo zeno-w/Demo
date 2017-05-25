@@ -38,9 +38,4 @@
       <Filter>Source Files\ZZUtilityUT</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DesktopCapture\DesktopCapture.h">
-      <Filter>Source Files\DesktopCapture</Filter>
-    </ClInclude>
-  </ItemGroup>
 </Project>

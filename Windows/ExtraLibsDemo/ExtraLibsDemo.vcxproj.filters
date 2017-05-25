@@ -16,15 +16,21 @@
     <Filter Include="Source Files\DUILib">
       <UniqueIdentifier>{9df0cf62-e457-49f7-ac41-c7e9f2e74255}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\libyuv">
+      <UniqueIdentifier>{f9493ba0-2d71-4295-b4a2-35d5cb8838a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MainExtraLibDemo.cpp" />
     <ClCompile Include="DUILib\DUITest.h">
       <Filter>Source Files\DUILib</Filter>
     </ClCompile>
     <ClCompile Include="DUILib\MoveWindow.cpp">
       <Filter>Source Files\DUILib</Filter>
     </ClCompile>
+    <ClCompile Include="libyuv\Convert.cpp">
+      <Filter>Source Files\libyuv</Filter>
+    </ClCompile>
+    <ClCompile Include="MainExtraLibDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TransparentWindow.h">

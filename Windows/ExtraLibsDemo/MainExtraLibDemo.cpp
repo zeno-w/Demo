@@ -21,3 +21,4 @@ int wmain(int argc, wchar_t *argv[])
 
 #pragma comment(lib,"googletest/gtest/v1.8.0/vc12_Debug_Unicode_MD_x86/gtestd.lib")
 #pragma comment(lib,"DuiLib/v1.0/vc12.0_U_MD_Debug_Lib/DuiLib.lib")
+#pragma comment(lib,"libyuv/libs/Debug/yuv.lib")

@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="DUILib\DUITest.h" />
     <ClCompile Include="DUILib\MoveWindow.cpp" />
+    <ClCompile Include="libyuv\Convert.cpp" />
     <ClCompile Include="MainExtraLibDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -52,13 +53,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)$(Configuration)\$(Platform)\temp\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)\bin\Debug_$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\Debug_$(Platform)\obj\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(SolutionDir)$(Configuration)\$(Platform)\temp\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)\bin\Release_$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\Release_$(Platform)\obj\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -68,7 +69,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ZZCppLibsHome)\googletest\gtest\v1.8.0\include;$(ZZCppLibsHome)\DuiLib\v1.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ZZCppLibsHome)\googletest\gtest\v1.8.0\include;$(ZZCppLibsHome)\DuiLib\v1.0\Include;$(ZZCppLibsHome)\libyuv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -85,7 +86,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ZZCppLibsHome)\googletest\gtest\v1.8.0\include;$(ZZCppLibsHome)\DuiLib\v1.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ZZCppLibsHome)\googletest\gtest\v1.8.0\include;$(ZZCppLibsHome)\DuiLib\v1.0\Include;$(ZZCppLibsHome)\libyuv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

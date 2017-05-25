@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)</OutDir>
-    <IntDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)\bin\Debug_$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\Debug_$(Platform)\obj\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)</OutDir>
-    <IntDir>$(SolutionDir)\bin\$(Configuration)_$(Platform)\obj\$(ProjectName)\</IntDir>
+    <OutDir>$(SolutionDir)\bin\Release_$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\bin\Release_$(Platform)\obj\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -97,9 +97,6 @@
     <ProjectReference Include="..\..\..\ZZExtraLibs\ZZCommon\original_repo\ZZUtility\ZZUtility.vcxproj">
       <Project>{3b2745a9-bda1-4494-8948-21c1122dd5e8}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="DesktopCapture\DesktopCapture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
