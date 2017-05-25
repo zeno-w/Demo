@@ -37,5 +37,8 @@
     <ClCompile Include="ZZUtilityUT\TcpIOCPModel.cpp">
       <Filter>Source Files\ZZUtilityUT</Filter>
     </ClCompile>
+    <ClCompile Include="ZZUtilityUT\Process.cpp">
+      <Filter>Source Files\ZZUtilityUT</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
